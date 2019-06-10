@@ -7,7 +7,7 @@ class User < ApplicationRecord
     session[:user_id] = user.try(:id)
   end
 
-  def delete
-
+  def auth
+    request.env['omniauth.auth']
   end
 end
